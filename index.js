@@ -1,9 +1,27 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  let myWord = word.toLowerCase();
+  let forward = [];
+  let backward = [];
+  for (let i = 0; i < myWord.length; i++) {
+    forward.push(myWord.charAt(i));
+  }
+  for (let i = myWord.length - 1; i >= 0; i--) {
+    backward.push(myWord.charAt(i));
+  }
+  if (forward.join("") === backward.join("")) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
+
 /* 
-  Add your pseudocode here
+A word that spells backward the same way it does forward. dad
+1. lowercase everything
+2.map it put forward
+3. map it out backward
+4. compare
 */
 
 /*
@@ -19,7 +37,7 @@ if (require.main === module) {
   console.log("");
 
   console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
+  console.log("=>", isPalindrome("dad"));
 }
 
 module.exports = isPalindrome;
