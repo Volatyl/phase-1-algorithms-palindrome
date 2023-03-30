@@ -1,20 +1,15 @@
 function isPalindrome(word) {
   let myWord = word.toLowerCase();
-  let forward = [];
   let backward = [];
-  for (let i = 0; i < myWord.length; i++) {
-    forward.push(myWord.charAt(i));
-  }
   for (let i = myWord.length - 1; i >= 0; i--) {
     backward.push(myWord.charAt(i));
   }
-  if (forward.join("") === backward.join("")) {
+  if (myWord === backward.join("")) {
     return true;
   } else {
     return false;
   }
 }
-
 
 /* 
 A word that spells backward the same way it does forward. dad
